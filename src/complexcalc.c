@@ -23,6 +23,7 @@ error_t diff(complex* a,complex* b,complex* cdiff)
     {
     cdiff->real=a->real-b->real;
     cdiff->img=a->img-b->img;
+    printf("%f+%fi\n",cdiff->real,cdiff->img);
     return SUCCESS;
     }
 }
@@ -34,6 +35,7 @@ error_t mul(complex* a,complex* b,complex* cmul)
     {
     cmul->real=a->real*b->real-a->img*b->img;
     cmul->img=a->img*b->real+a->real*b->img;
+    printf("%f+%fi\n",cmul->real,cmul->img);
     return SUCCESS;
     }
 }
@@ -47,6 +49,7 @@ error_t divtest(complex* a,complex* b,complex* cdiv)
     {
     cdiv->real=((a->real*b->real)+(a->img*b->img))/((b->real*b->real)+(b->img*b->img));
     cdiv->img=(a->img*b->real-(a->real*b->img))/((b->real*b->real)+(b->img,b->img));
+    printf("%f+%fi\n",cdiv->real,cdiv->img);
     return SUCCESS;
     }
 }
