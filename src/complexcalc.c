@@ -1,3 +1,4 @@
+#include<stdio.h>
 #include "calc.h"
 #include "stdlib.h"
 //#include<math.h>
@@ -10,6 +11,7 @@ error_t sum(complex* a,complex* b,complex* csum)
     {
     csum->real=a->real+b->real;
     csum->img=a->img+b->img;
+    printf("%f+%fi\n",csum->real,csum->img);
     return SUCCESS;
     }
 }
