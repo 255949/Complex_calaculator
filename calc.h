@@ -50,6 +50,6 @@ error_t mul(complex* a,complex* b, complex* cmul);
  * @param cdiv 
  * @return error_t 
  */
-error_t div(complex* a,complex* b, complex* cdiv);
+error_t divtest(complex* a,complex* b, complex* cdiv);
 
 #endif

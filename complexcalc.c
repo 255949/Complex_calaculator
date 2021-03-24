@@ -1,7 +1,8 @@
 #include "calc.h"
-#include<math.h>
+#include "stdlib.h"
+//#include<math.h>
 
-error_t sum(complex a,complex b,complex* csum)
+error_t sum(complex* a,complex* b,complex* csum)
 {
     if(NULL==a || NULL == b)
         return ERROR_NULL_PTR;
@@ -12,7 +13,7 @@ error_t sum(complex a,complex b,complex* csum)
     return SUCCESS;
     }
 }
-error_t diff(complex a,complex b,complex* cdiff)
+error_t diff(complex* a,complex* b,complex* cdiff)
 {
     if(NULL==a || NULL == b)
         return ERROR_NULL_PTR;
@@ -23,7 +24,7 @@ error_t diff(complex a,complex b,complex* cdiff)
     return SUCCESS;
     }
 }
-error_t mul(complex a,complex b,complex* cmul)
+error_t mul(complex* a,complex* b,complex* cmul)
 {
     if(NULL==a || NULL == b)
         return ERROR_NULL_PTR;
@@ -34,7 +35,7 @@ error_t mul(complex a,complex b,complex* cmul)
     return SUCCESS;
     }
 }
-error_t div(complex a,complex b,complex* cdiv)
+error_t divtest(complex* a,complex* b,complex* cdiv)
 {
     if(b->real==0 || b->img==0)
         return ERROR_DIV_BY_ZERO;
@@ -42,8 +43,8 @@ error_t div(complex a,complex b,complex* cdiv)
         return ERROR_NULL_PTR;
     else
     {
-    cdiv->real=((a->real*b->real)+(a->img*b->img))/(pow(b->real,2)+pow(b->img,2));
-    cdiv->img=(a->img*b->real_-(a->real*b->img))/(pow(b->real,2)+pow(b->img,2));
+    cdiv->real=((a->real*b->real)+(a->img*b->img))/((b->real*b->real)+(b->img*b->img));
+    cdiv->img=(a->img*b->real-(a->real*b->img))/((b->real*b->real)+(b->img,b->img));
     return SUCCESS;
     }
 }
