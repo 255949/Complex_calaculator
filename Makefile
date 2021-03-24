@@ -1,11 +1,11 @@
 PROJECT=Calculator
 SRC= complexcalc.c test.c
-INC=unity
+UNI=unity
 UNITY=unity/unity.c
 HEADER=calc.h
 
 $(PROJECT).exe : $(SRC) $(UNITY)
-	gcc $(HEADER) $(INC) $(SRC) $(UNITY) -o $(PROJECT).exe
+	gcc $(HEADER) $(UNI) $(SRC) $(UNITY) -o $(PROJECT).exe
 
 run:
 	./$(PROJECT).exe
